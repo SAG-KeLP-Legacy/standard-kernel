@@ -24,7 +24,7 @@ import it.uniroma2.sag.kelp.kernel.KernelComposition;
 /**
  * It is a kernel operating of ExamplePairs applying the following formula:<br>
  * 
- * \(Kp(<x_1, x_2>,<y_1,y_2>)= K(x_1, y_1) + K(x_2, y_2) - K(x_1, y_2) - K(x_2, y_1) \) <br>
+ * \(Kp(<x_1, x_2>,<y_1,y_2>) = K(x_1, y_1) + K(x_2, y_2) - K(x_1, y_2) - K(x_2, y_1)\) <br>
  * where K is another kernel the preference kernel relies on. <br> 
  *
  * The preference kernel was firstly introduced in: 
