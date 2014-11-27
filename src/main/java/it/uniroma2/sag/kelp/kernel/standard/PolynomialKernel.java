@@ -16,7 +16,8 @@
 package it.uniroma2.sag.kelp.kernel.standard;
 
 /**
- * Polynomial Kernel: given a kernel K, the polynomial formula Kp is </br>
+ * Polynomial Kernel: given a kernel K, the polynomial formula Kp is
+ * 
  * \(Kp(x,y)=(a*K(x,y)+b)^d\)
  * 
  * @author Simone Filice

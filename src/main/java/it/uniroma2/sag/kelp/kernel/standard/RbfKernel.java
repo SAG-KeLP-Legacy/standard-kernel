@@ -23,8 +23,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Radial Basis Function Kernel. <br>
- * Given a kernel K, the RBF formula Kr is : <br>
- * \(Kr(x,y) = e^{-\gamma * \left\lVert x-y \right\rVert ^2}\) where: <br>
+ * Given a kernel K, the RBF formula Kr is: <br>
+ * \(Kr(x,y) = e^{-\gamma * \left \lVert x-y \right \rVert ^2}\) where: <br>
  * \(\left\lVert a \right\rVert\) is the norm of a in the kernel space K, thus \(\left\lVert x-y \right\rVert ^2\) can be computed
  * as: <br>
  * \(\left\lVert x-y \right\rVert ^2 = \left\lVert x \right\rVert ^2 + \left\lVert y \right\rVert ^2 - 2K(x,y) = K(x,x) + K(y,y) - 2K(x,y)\)
