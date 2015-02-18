@@ -40,7 +40,7 @@ public class LinearKernel extends DirectKernel<Vector> {
 	}
 
 	@Override
-	protected float kernelComputation(Vector repA, Vector repB) {
+	public float kernelComputation(Vector repA, Vector repB) {
 		return repA.innerProduct(repB);
 	}
 }
