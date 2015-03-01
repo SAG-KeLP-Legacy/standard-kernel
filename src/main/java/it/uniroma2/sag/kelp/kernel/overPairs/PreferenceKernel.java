@@ -13,16 +13,15 @@
  * limitations under the License.
  */
 
-package it.uniroma2.sag.kelp.kernel.examplepair;
-
-import com.fasterxml.jackson.annotation.JsonTypeName;
+package it.uniroma2.sag.kelp.kernel.overPairs;
 
 import it.uniroma2.sag.kelp.data.example.Example;
-import it.uniroma2.sag.kelp.data.example.ExamplePair;
 import it.uniroma2.sag.kelp.kernel.Kernel;
-import it.uniroma2.sag.kelp.kernel.KernelComposition;
+import it.uniroma2.sag.kelp.kernel.overPairs.KernelOverPairs;
+
+import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
- * It is a kernel operating of ExamplePairs applying the following formula:<br>
+ * It is a kernel operating on ExamplePairs applying the following formula:<br>
  * 
  * \(K( < x_1, x_2 >, < y_1,y_2 > ) = K(x_1, y_1) + K(x_2, y_2) - K(x_1, y_2) - K(x_2, y_1)\) <br>
  * 
@@ -35,7 +34,7 @@ import it.uniroma2.sag.kelp.kernel.KernelComposition;
  * @author Simone Filice
  */
 @JsonTypeName("preference")
-public class PreferenceKernel extends KernelComposition{
+public class PreferenceKernel extends KernelOverPairs{
 			
 	public PreferenceKernel(Kernel baseKernel){
 		this.baseKernel=baseKernel;		
@@ -44,21 +43,10 @@ public class PreferenceKernel extends KernelComposition{
 	public PreferenceKernel(){
 		
 	}
-	
+
 	@Override
-	protected float kernelComputation(Example exA, Example exB) {
-		
-		if(!(exA instanceof ExamplePair) || !(exB instanceof ExamplePair)){
-			throw new java.lang.IllegalArgumentException("Invalid object: expected two ExamplePairs to compute PreferenceKernel");
-		}
-		
-		ExamplePair pairA = (ExamplePair)exA;
-		ExamplePair pairB = (ExamplePair)exB;
-		Example exA1 = pairA.getLeftExample();
-		Example exA2 = pairA.getRightExample();
-		Example exB1 = pairB.getLeftExample();
-		Example exB2 = pairB.getRightExample();	
-		
+	public float kernelComputationOverPairs(Example exA1, Example exA2, Example exB1,
+			Example exB2) {
 		return this.baseKernel.innerProduct(exA1, exB1) + this.baseKernel.innerProduct(exA2, exB2) 
 				- this.baseKernel.innerProduct(exA1, exB2) - this.baseKernel.innerProduct(exA2, exB1);
 	}
