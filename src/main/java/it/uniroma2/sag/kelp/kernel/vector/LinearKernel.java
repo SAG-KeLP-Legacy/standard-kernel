@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 
 @JsonTypeName("linear")
-public class LinearKernel extends DirectKernel<Vector> {
+public class LinearKernel extends DirectKernel<Vector<?>> {
 
 	public LinearKernel(String representationIdentifier) {
 		super(representationIdentifier);
@@ -40,7 +40,7 @@ public class LinearKernel extends DirectKernel<Vector> {
 	}
 
 	@Override
-	public float kernelComputation(Vector repA, Vector repB) {
+	public float kernelComputation(Vector<?> repA, Vector<?> repB) {
 		return repA.innerProduct(repB);
 	}
 }
