@@ -29,8 +29,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Weighted Linear Combination of Kernels
- * <br>Given a kernel some kernel K1...Km, with weights c1,...cn, the combination formula is:
- * <br> SUM(Ki*ci)
+ * <br>Given the kernels \(K_1 \ldots K_n\), with weights \(c_1 \ldots c_n\), the combination formula is:
+ * <br> \(\sum_{i}c_iK_i\)
 
  * @author      Simone Filice
  */
