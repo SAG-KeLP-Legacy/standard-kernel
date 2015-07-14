@@ -13,19 +13,19 @@
  * limitations under the License.
  */
 
-package it.uniroma2.sag.kelp.kernel.overPairs;
+package it.uniroma2.sag.kelp.kernel.onPairs;
 
 import it.uniroma2.sag.kelp.data.example.Example;
 import it.uniroma2.sag.kelp.kernel.Kernel;
-import it.uniroma2.sag.kelp.kernel.overPairs.KernelOverPairs;
+import it.uniroma2.sag.kelp.kernel.onPairs.KernelOnPairs;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * It is a kernel operating on ExamplePairs applying the following formula:<br>
  * 
- * \(K( < x_1, x_2 >, < y_1,y_2 > ) = K(x_1, y_1) + K(x_2, y_2) - K(x_1, y_2) - K(x_2, y_1)\) <br>
+ * \(K( < x_1, x_2 >, < y_1,y_2 > ) = BK(x_1, y_1) + BK(x_2, y_2) - BK(x_1, y_2) - BK(x_2, y_1)\) <br>
  * 
- * where K is another kernel the preference kernel relies on. <br> 
+ * where BK is another kernel the preference kernel relies on. <br> 
  *
  * The preference kernel was firstly introduced in: 
  * [Shen and Joshi, 2003] L. Shen and A. K. Joshi. An SVM based voting algorithm
@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  * @author Simone Filice
  */
 @JsonTypeName("preference")
-public class PreferenceKernel extends KernelOverPairs{
+public class PreferenceKernel extends KernelOnPairs{
 			
 	public PreferenceKernel(Kernel baseKernel){
 		this.baseKernel=baseKernel;		
